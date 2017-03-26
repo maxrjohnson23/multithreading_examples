@@ -1,7 +1,7 @@
 # multithreading_examples
-##Examples of Multithreading using Java
+## Examples of Multithreading using Java
 
-###Writing Correct Concurrent Code:
+### Writing Correct Concurrent Code:
 **1. Check for race conditions**
   - Occur on fields (not variables/parameters)
   - 2 threads are reading/writing a given field
