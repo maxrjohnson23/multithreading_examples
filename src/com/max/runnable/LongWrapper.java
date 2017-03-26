@@ -6,15 +6,19 @@ package com.max.runnable;
 public class LongWrapper {
 
     private long l;
-    private Object key = new Object();
+    private final Object key = new Object();
 
     public LongWrapper(long l) {
         this.l = l;
     }
 
+    // synchronized to create happens before link with incrementValue()
     public long getValue() {
-        return l;
+        synchronized (key) {
+            return l;
+        }
     }
+
     public void incrementValue() {
         synchronized (key) {
             l++;
