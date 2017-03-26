@@ -1,7 +1,7 @@
 package com.max.singleton;
 
 /**
- * First implementation of the Singleton Pattern
+ * Synchronized Singleton Pattern
  */
 public class Singleton {
 
@@ -9,7 +9,8 @@ public class Singleton {
 
     private Singleton() {}
 
-    public static Singleton getInstance() {
+    // Add synchronization to prevent multiple threads from accessing
+    public static synchronized Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();
         }
